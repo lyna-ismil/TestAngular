@@ -1,3 +1,4 @@
+<a routerLink="/residence/add">Add Residence</a>
 <h1>List of residences</h1>
 <label for="search">Search By Address : </label>
 <input type="text" id="search" [(ngModel)]="search">
@@ -12,9 +13,9 @@
                 <span *ngIf="residence.status == 'En Construction'">La residence est en construction</span> 
                 <span *ngIf="residence.status == 'Vendu'">La residence est vendue</span> 
             </p>
-            <a [routerLink]="['/residence/details/', residence.id]">Details</a>
-            <button (click)="showLocation(i)" >Show Location</button>
-            <button (click)="addFavoris(i)" >Like</button>
+            <a class="btn btn-secondary" [routerLink]="['/residence/details/', residence.id]">Details</a>
+            <button class="btn btn-primary" (click)="showLocation(i)" >Show Location</button>
+            <button class="btn btn-warning" (click)="addFavoris(i)" >Like</button>
         </div>
     </div>
 </div>

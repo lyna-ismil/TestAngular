@@ -1,4 +1,10 @@
 <h1>Residence Details</h1>
-<div>
-<p><b>Id : </b> {{ id }} </p>
+<div *ngIf="id>0" >
+    <img src="{{residence?.image}}" alt="{{residence?.name}}">
+    <p><b>Id : </b> {{ id }} </p>
+    <p><b>Name : </b> {{ residence?.name }} </p>
+    <p><b>Path : </b> {{ path }} </p>
+    <p><b>Address : </b> {{ residence?.address }} </p>
+    
 </div>
+<h1> {{ error }} </h1>
