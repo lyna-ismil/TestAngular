@@ -1,0 +1,25 @@
+<h1>List of residences</h1>
+<label for="search">Search By Address : </label>
+<input type="text" id="search" [(ngModel)]="search">
+<div>
+    <div *ngFor="let residence of listResidences; let i=index" >
+        <div *ngIf="search == residence.address || search ==''">
+            <img src="{{residence.image}}" alt="{{residence.name}}">
+            <p><b>Name : </b> {{ residence.name }} </p>
+            <p [hidden]="hide[i]"><b>Address : </b> {{ residence.address }} </p>
+            <p><b>Status : </b> 
+                <span *ngIf="residence.status == 'Disponible'">La residence est disponible</span> 
+                <span *ngIf="residence.status == 'En Construction'">La residence est en construction</span> 
+                <span *ngIf="residence.status == 'Vendu'">La residence est vendue</span> 
+            </p>
+            <a [routerLink]="['/residence/details/', residence.id]">Details</a>
+            <button (click)="showLocation(i)" >Show Location</button>
+            <button (click)="addFavoris(i)" >Like</button>
+        </div>
+    </div>
+</div>
+<h2>Favorite List</h2>
+
+<div *ngFor="let residence of listFavoris" >
+    <p><b>Name : </b> {{ residence.name }} </p>
+</div>
