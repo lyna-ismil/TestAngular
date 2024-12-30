@@ -1,0 +1,22 @@
+{
+    "voitures": [
+      {
+        "id": 1,
+        "marque": "Toyota",
+        "modele": "Corolla",
+        "annee": 2022,
+        "couleur": "Rouge",
+        "image": "https://example.com/image1.jpg",
+        "prix": 20000
+      },
+      {
+        "id": 2,
+        "marque": "Honda",
+        "modele": "Civic",
+        "annee": 2021,
+        "couleur": "Bleue",
+        "image": "https://example.com/image2.jpg",
+        "prix": 22000
+      }
+    ]
+  }

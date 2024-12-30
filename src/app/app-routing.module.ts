@@ -1,20 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ResidenceComponent } from './residence/residence.component';
-import { AppartementComponent } from './appartement/appartement.component';
-import { HomeComponent } from './home/home.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { ResidenceDetailsComponent } from './residence-details/residence-details.component';
-import { AddResidenceComponent } from './add-residence/add-residence.component';
+import { VoitureListeComponent } from './voiture-liste/voiture-liste.component'; // Adjust the path if necessary
+import { VoitureDetailsComponent } from './voiture-details/voiture-details.component'; // Adjust the path if necessary
+import { AjoutVoitureComponent } from './ajout-voiture/ajout-voiture.component'; // Adjust the path if necessary
+import { ModificationVoitureComponent } from './modification-voiture/modification-voiture.component'; // Adjust the path if necessary
 
 const routes: Routes = [
-  { path:"" , redirectTo:"home", pathMatch:"full"},
-  { path:"home" , component: HomeComponent},
-  { path:"residence" , component: ResidenceComponent},
-  { path:"residence/add", component: AddResidenceComponent},
-  { path:"residence/details/:id" , component: ResidenceDetailsComponent},  
-  { path:"appartement", component: AppartementComponent},
-  { path:"**" , component:NotFoundComponent},
+  {  path: '', redirectTo: '/voitures', pathMatch: 'full' }, // Redirect to voiture list by default
+  { path: 'voitures', component: VoitureListeComponent },
+  { path: 'voiture/:id', component: VoitureDetailsComponent }, // Assuming you're using ID to fetch details
+  { path: 'ajout', component: AjoutVoitureComponent },
+  { path: 'modification/:id', component: ModificationVoitureComponent } // Assuming you're using ID for modification
 ];
 
 @NgModule({

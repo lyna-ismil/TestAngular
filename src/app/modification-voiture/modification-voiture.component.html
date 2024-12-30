@@ -1,0 +1,52 @@
+<h1>Modifier une Voiture</h1>
+<form [formGroup]="voitureForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="marque">Marque:</label>
+    <input id="marque" formControlName="marque" />
+    <div *ngIf="voitureForm.get('marque')?.invalid && voitureForm.get('marque')?.touched" style="color: red;">
+      La marque est requise.
+    </div>
+  </div>
+
+  <div>
+    <label for="modele">Modèle:</label>
+    <input id="modele" formControlName="modele" />
+    <div *ngIf="voitureForm.get('modele')?.invalid && voitureForm.get('modele')?.touched" style="color: red;">
+      Le modèle est requis.
+    </div>
+  </div>
+
+  <div>
+    <label for="annee">Année:</label>
+    <input id="annee" type="number" formControlName="annee" />
+    <div *ngIf="voitureForm.get('annee')?.invalid && voitureForm.get('annee')?.touched" style="color: red;">
+      L'année est requise.
+    </div>
+  </div>
+
+  <div>
+    <label for="couleur">Couleur:</label>
+    <input id="couleur" formControlName="couleur" />
+    <div *ngIf="voitureForm.get('couleur')?.invalid && voitureForm.get('couleur')?.touched" style="color: red;">
+      La couleur est requise.
+    </div>
+  </div>
+
+  <div>
+    <label for="image">Image URL:</label>
+    <input id="image" formControlName="image" />
+    <div *ngIf="voitureForm.get('image')?.invalid && voitureForm.get('image')?.touched" style="color: red;">
+      L'URL de l'image est requise.
+    </div>
+  </div>
+
+  <div>
+    <label for="prix">Prix:</label>
+    <input id="prix" type="number" formControlName="prix" />
+    <div *ngIf="voitureForm.get('prix')?.invalid && voitureForm.get('prix')?.touched" style="color: red;">
+      Le prix est requis.
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="voitureForm.invalid">Modifier</button>
+</form>

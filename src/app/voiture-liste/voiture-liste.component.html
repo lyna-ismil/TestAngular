@@ -1,0 +1,8 @@
+<h2>List of Voitures</h2>
+<div *ngIf="errorMessage" style="color: red;">{{ errorMessage }}</div>
+<ul>
+  <li *ngFor="let voiture of voitures">
+    {{ voiture.marque }} - {{ voiture.modele }}
+    <button (click)="deleteVoiture(voiture)">Delete</button>
+  </li>
+</ul>
